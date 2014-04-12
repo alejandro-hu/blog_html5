@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block titulo %}
+	Blog
+{% endblock %}
+
+{% block contenido %}
+
+	<h2>Blog</h2>
+	
+	
+	{% if posts.length == 0 %}
+		<h3>No hay artículos aún</h3>
+	{% endif %}
+	
+	<!--Iteramos el arreglo del post -->
+	{% for post in posts %}
+		<!-- Por cada post en el arreglo haz lo siguiente -->
+		<h3>{{post.titulo}}</h3>
+	{% endfor %}
+	
+{% endblock %}

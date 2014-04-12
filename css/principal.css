@@ -1,0 +1,176 @@
+/* Reglas CSS que se aplican a todo el documento*/
+*{
+	font-family:"verdana";
+}
+
+.flexible{
+	max-width:100%;
+}
+
+body{
+/*En la mayoría de los navegadores el font-size por defoult es de 16px; si no se definiera uno*/
+	font-size: 18px;
+}
+body h1{
+	font-family: 'Englebert', sans-serif;
+}
+
+
+/*A continuación se definen los estilos para el encabezado*/
+
+header {
+	color:		#FFF;
+	/*La codificación hexagesimal corresponde a: 2 digitos para el rojo, 2 dígitos para el verde y 2 dígitos para el azul*/
+	background: #e95694;
+	background: rgb(255, 0, 0);
+	/*Tambien se pueden definir los colores para css en rgba que quiere decir alpha chanel lo que otorga transparencia a la caja*/
+	background: rgba(255, 0, 0, 0.5);
+}
+
+header ul li{
+	display:	inline-block;	
+}
+header h1{
+/*Todas las etiquetas h1 tienen márgenes por defaut (arriba y abajo)*/
+	margin-bottom:0em;
+	margin-top:0em;
+	padding:1em;
+}
+nav ul{
+	/*Todas las etiquetas ul tienen márgenes por defaut (arriba y abajo)*/
+	margin-bottom:0em;
+	margin-top:0em;
+}
+
+/*--------------------------------------------------------------------------------------------*/
+#presentacion{
+	background:url("../imagenes/portadas/portada4.jpg") no-repeat center;
+	/* background-size:100% 100%; El primer valor define el ancho y el segundo define el alto*/
+	background-size:cover;
+	/*background-attachment:fixed;*//*Efecto paralax*/
+	color:#FFFFFF;
+	line-height:30em;
+	height:30em;
+	padding-left:5%;
+	/*text-align:center;*/
+}
+#presentacion h1{
+	margin-bottom:0em;
+	margin-top:0em;
+}
+
+/*--------------------------------------------------------------------------------------------*/
+#servicios {
+	background: #f5f5f5;
+	padding:1em;
+}
+.servicio{
+	color:		#333333;
+	display:	inline-block;
+	text-align:	center;
+	transition:all 0.5s ease;
+	vertical-align:top;
+	width:		31%;
+}
+.servicio:hover{
+	/*transform:scale(1.1);*/
+	/*transform:rotate(40deg);*/
+	/*transform:rotateX(40deg);*/
+	transform:translateY(-1.5em);
+}
+/*----------------------------------------------------------------------------------------*/
+#testimonios {
+	background: #454545;
+	color:#FFF;
+	padding:	2em;
+}
+.testimonio{
+	display:	inline-block;
+	vertical-align:top;
+	width:		48%;
+}
+/*A continuación se definen los estilos para el------------------------------- PIE DE PÁGINA*/
+footer {
+	background: #333333;
+	border-top:2px solid #e95644;
+	color:		#FFF;
+	margin-bottom:40px;
+	padding:2em;
+}
+#sociales{
+	display:	inline-block;
+	width:		67%;
+}
+
+.imagen{
+/*Nota la propiedad transition se debe colocar en la clase de inicio*/
+	transition:all 0.5s ease;
+}
+.imagen:hover{
+	-moz-transform:translateY(-1.2em);
+}
+
+#suscribir{
+	display:inline-block;
+	vertical-align:top;
+	width:		27%;
+}
+#suscribir-email{
+	color:#333;
+/*Que propiedad es la que se va a animar(width), que dure 1 segundo y que sea lineal*/
+	transition:width 1s linear;
+/*transition:all 1s linear;*//*Si queremos animar todas las propiedades que se hayan definido en los estilos y que se puedan animar se utiliza la palabra all*/
+	width:10em;
+}
+/*Focus es una pseudoclase*/
+#suscribir-email:focus{
+	width:13em;
+}
+
+
+/*Esto corresponde a la página de contacto*/
+/*input:required{
+	background:url("/imagenes/correcto.png") no-repeat;
+	background-size:20px;
+	background-position:top right;
+}*/
+input:valid{
+	background:url("/imagenes/correcto.png") no-repeat;
+	background-size:20px;
+	background-position:top right;
+}
+input:invalid{
+	background:url("/imagenes/incorrecto.png") no-repeat;
+	background-size:20px;
+	background-position:top right;
+}
+
+/*Esto es un media Query*/
+@media screen and (max-width:1100px){
+	#sociales, #suscribir{
+		width:48%;
+	}		
+}
+
+@media screen and (max-width:750px){
+	#sociales, #suscribir{
+		text-align:center;
+		width:100%;
+	}		
+}
+
+@media screen and (max-width:890px){
+	#testimonios{
+		font-size:1.5em;
+	}
+	.testimonio{
+		text-align:center;
+		width:100%;
+	}
+}
+
+/*@media screen and (max-width:890px){
+	.servicio{
+		width:100%;
+	}
+}*/

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!--Tenemos que usar el mismo encoding para todos los desarrollos para evitar colisiones y que algunos caracteres se vean de modo incorrecto -->
+		<meta charset="utf-8"/>
+		<!--Con la siguiente etiqueta se desactiva la escala de la página al tamaño del ancho del dispositivo (cuando el dispositivo lo tiene activado como los iphone) -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<title>Mi Blog en HTML5</title>
+		<link rel="stylesheet" href="css/normalize.css" type="text/css" /><!--para que la vista de mi página sea igual en todos los navegadores -->
+		<link href='http://fonts.googleapis.com/css?family=Englebert' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/principal.css" type="text/css" />
+		<!--Tambien se pueden llamar hojas de estilo para aplicar medias query -->
+		<link rel="stylesheet" href="css/tabletas.css" type="text/css" media="screen and(max-width:890px)"/>
+	</head>
+	<body>
+		<!--Todo lo que sea un ecabezado va dentro de una etiqueta header -->
+		<!-- A continuación se colocará header que incluye el nav-->
+		<header>
+			<nav>
+				<!--Es importante que las etiquetas h1 no se repitan (sólo una por sección) para no causar conflictos con el navegador y buscador-->
+				<h1>{% block titulo %}{% endblock %}</h1>
+				<ul>
+					<li>
+						Inicio
+					</li>
+					<li>
+						Blog
+					</li>
+					<li>
+						Contacto
+					</li>
+				</ul>
+			</nav>
+		</header>
+		{% block contenido %}
+		
+		{% endblock %}
+		<footer>
+			<div id="sociales">
+				<h2>Síguenos</h2>
+				<!-- Se notará que las imagenes son elementos de línea por lo que aparecerán en línea, por otro lado las secciones, divs etc. son elementos de bloque por lo que aparecen uno debajo del otro-->
+				<img class="imagen" src="imagenes/vidrio/facebook.png" />
+				<img class="imagen" src="imagenes/vidrio/twitter.png" />
+				<img class="imagen" src="imagenes/vidrio/google.png" />
+			</div>
+			<div id="suscribir">
+				<h2>Suscribir:</h2>
+				<form action="/suscribir" method="post">
+				<label for="suscribir-email">Email:</label>
+				<input id="suscribir-email" type="text" name="email"}/>
+				<input type="submit" value="enviar" />	
+				</form>
+				<!--<label for="suscribir-email">Email:</label>
+				<input id="suscribir-email" type="text"/>-->
+			</div>
+		</footer>
+	</body>
+</html>

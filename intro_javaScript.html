@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+	<head lang="es">
+		<meta charset="utf-8"/>
+		<title>JavaScript intro</title>
+		<script>
+		/*para mostrar un texto en pantalla se utiliza el comando write*/
+			/*var saludo = "hola a todos (otra vez)"
+			var year = 2014;
+			
+			document.write("<h1>Hola a todos</h1>");
+			document.write(5*3);
+			document.write("<h1>"+ 5*3 +"</h1>");
+			document.write(saludo);
+			document.write("<div>" + year + "</div>");
+			//prompt solicita un dato al usuario
+			var nombre = prompt("Escribe tu nombre");
+			document.write(nombre);*/
+			
+			
+			//Forma Uno para declarar funciones en java Script
+			function suma(a,b){
+				var respuesta = a + b;
+				
+				return respuesta;
+			}
+			
+			var calculo = suma(1,3);
+			document.write(calculo);
+			
+			//Forma 2 de declarar funciones (funciones anónimas)
+			var multi = function(a,b){
+				var respuesta = a*b;
+				return respuesta;
+			};
+			
+			var calculo = multi(3,6);
+			document.write(calculo);
+			
+			//Forma 3 de declarar funciones
+			function operacion(miFuncion, a,b){
+				return miFuncion(a,b);
+			}
+			var calculo = operacion(multi, 4,3);
+			document.write(calculo);
+			
+			
+			/*Ejercicio en donde pide el nombre domicilio y teléfono*/
+			/*var nombre = prompt("Escribe tu nombre");
+			document.write("<div>" + "Nombre:" + nombre + "</div>");
+			var domicilio = prompt("Escribe tu domicilio");
+			document.write("<div>" + "Domicilio:" + domicilio + "</div>");
+			var telefono = prompt("Escribe tu teléfono");
+			document.write("<div>Teléfono:" + telefono + "</div>");*/
+			
+			
+			//Declarar un objeto en javaScript
+			var persona = {
+				nombre:"alex",
+				edad:"33",
+				saludar:function(){
+					document.write("hola a todos");
+				}
+			};
+			document.write(persona.nombre);
+			persona.saludar();
+		</script>		
+	</head>	
+	<body>		
+	</body>
+</html>
